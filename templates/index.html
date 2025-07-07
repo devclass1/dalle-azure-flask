@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Azure DALL·E Image Generator</title>
+</head>
+<body>
+    <h1>Generate Image with Azure OpenAI DALL·E</h1>
+    <form method="post">
+        <input type="text" name="prompt" placeholder="Enter prompt" required>
+        <br>
+        <label>Size: <input type="text" name="size" value="1024x1024"></label>
+        <label>Quality: <input type="text" name="quality" value="standard"></label>
+        <label>Style: <input type="text" name="style" value="vivid"></label>
+        <br>
+        <button type="submit">Generate</button>
+    </form>
+
+    {% if image_url %}
+        <h2>Generated Image:</h2>
+        <img src="{{ image_url }}" width="512">
+        <p><strong>Prompt:</strong> {{ prompt }}</p>
+    {% endif %}
+
+    {% if error %}
+        <p style="color:red;">Error: {{ error }}</p>
+    {% endif %}
+</body>
+</html>
