@@ -7,12 +7,12 @@ app = Flask(__name__)
 
 # Configure Azure client
 client = AzureOpenAI(
-    api_key=os.environ.get("AZURE_KEY"),
-    api_version="2023-06-01-preview",
-    azure_endpoint=os.environ.get("AZURE_ENDPOINT")
+    api_key="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+    api_version="2024-04-01-preview",
+    azure_endpoint="https://XXXXXXXXXXXXXXXXXXXXXXX.cognitiveservices.azure.com/"
 )
 
-DEPLOYMENT_NAME = os.environ.get("DEPLOYMENT_NAME", "")
+DEPLOYMENT_NAME = "dall-e-3"
 
 UPLOAD_FOLDER = 'static/images'
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
